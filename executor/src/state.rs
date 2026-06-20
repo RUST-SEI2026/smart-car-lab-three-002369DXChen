@@ -1,4 +1,5 @@
 use crate::action::Action;
+use crate::assembler::Assemble;
 
 #[derive(Default, Copy, Clone)]
 pub(crate) struct State {
@@ -6,16 +7,16 @@ pub(crate) struct State {
     is_fast: bool,
 }
 
-impl State {
-    pub(crate) fn be_reverse(&mut self) {
+impl Assemble for State {
+    fn be_reverse(&mut self) {
         self.is_reverse = !self.is_reverse;
     }
 
-    pub(crate) fn be_fast(&mut self) {
+    fn be_fast(&mut self) {
         self.is_fast = !self.is_fast;
     }
 
-    pub(crate) fn assemble(&self, cmd: char) -> Vec<Action> {
+    fn assemble(&self, cmd: char) -> Vec<Action> {
         match cmd {
             'M' => self.move_assemble(),
             'L' => self.turn_left_assemble(),
