@@ -1,6 +1,6 @@
 use crate::action::Action;
 
-pub(crate) trait Assemble {
+pub(crate) trait Assembler {
     fn assemble(&self, cmd: char) -> Vec<Action> {
         match cmd {
             'M' => self.move_assemble(),

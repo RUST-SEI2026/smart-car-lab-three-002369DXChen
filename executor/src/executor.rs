@@ -1,9 +1,9 @@
-use crate::assembler::Assemble;
+use crate::assembler::Assembler;
 use crate::Pose;
 
 pub struct Executor {
     pub(crate) pose: Pose,
-    pub(crate) state: Box<dyn Assemble>,
+    pub(crate) state: Box<dyn Assembler>,
 }
 
 impl Executor {

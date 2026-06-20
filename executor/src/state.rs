@@ -1,5 +1,5 @@
 use crate::action::Action;
-use crate::assembler::Assemble;
+use crate::assembler::Assembler;
 
 #[derive(Default, Copy, Clone)]
 pub(crate) struct State {
@@ -7,7 +7,7 @@ pub(crate) struct State {
     is_fast: bool,
 }
 
-impl Assemble for State {
+impl Assembler for State {
     fn be_reverse(&mut self) {
         self.is_reverse = !self.is_reverse;
     }
