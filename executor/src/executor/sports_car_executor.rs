@@ -1,4 +1,3 @@
-use crate::assembler::Assembler;
 use crate::pose::Pose;
 use crate::sports_car_state::SportsCarState;
 use crate::Executor;
